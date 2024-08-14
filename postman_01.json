@@ -1,0 +1,464 @@
+{
+	"info": {
+		"_postman_id": "beff8a00-530d-4750-ab64-6b402fe65513",
+		"name": "Gowala Farms - Local",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "17346811"
+	},
+	"item": [
+		{
+			"name": "(employees)",
+			"item": [
+				{
+					"name": "employees",
+					"item": [
+						{
+							"name": "Get Employees",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{api_local_path}}/employees",
+									"host": [
+										"{{api_local_path}}"
+									],
+									"path": [
+										"employees"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "employee",
+					"item": [
+						{
+							"name": "Get Employee ID",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{api_local_path}}/employee?id=66b276a26bdd39792d78d6fc",
+									"host": [
+										"{{api_local_path}}"
+									],
+									"path": [
+										"employee"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "66b276a26bdd39792d78d6fc"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Add Employee",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "authorization",
+										"value": "Bearer {{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "AMALIE DOLLERUP",
+											"type": "text"
+										},
+										{
+											"key": "position",
+											"value": "Up Right",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "<p>Description of Employee</p>",
+											"type": "text"
+										},
+										{
+											"key": "file",
+											"type": "file",
+											"src": "/C:/MCDM_Arsenalet/One Day Viborg/materialer/34-amalie-rosbjerg.jpg"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{api_local_path}}/employee",
+									"host": [
+										"{{api_local_path}}"
+									],
+									"path": [
+										"employee"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Employee",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "authorization",
+										"value": "Bearer {{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "id",
+											"value": "66b4929f745c7c7eb5982e02",
+											"type": "text"
+										},
+										{
+											"key": "file",
+											"type": "file",
+											"src": "/C:/MCDM_Arsenalet/One Day Viborg/materialer/34-amalie-rosbjerg.jpg"
+										},
+										{
+											"key": "position",
+											"value": "Updated Position",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "Ladida",
+											"type": "text"
+										},
+										{
+											"key": "name",
+											"value": "Anders",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{api_local_path}}/employee",
+									"host": [
+										"{{api_local_path}}"
+									],
+									"path": [
+										"employee"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Employee",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "authorization",
+										"value": "Bearer {{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{api_local_path}}/employee?id=66b276a26bdd39792d78d6fc",
+									"host": [
+										"{{api_local_path}}"
+									],
+									"path": [
+										"employee"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "66b276a26bdd39792d78d6fc"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "SignIn",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\" : \"admin@mediacollege.dk\",\r\n    \"password\" : \"admin\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api_local_path}}/auth/signin",
+							"host": [
+								"{{api_local_path}}"
+							],
+							"path": [
+								"auth",
+								"signin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Token Check",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{api_local_path}}/auth/token",
+							"host": [
+								"{{api_local_path}}"
+							],
+							"path": [
+								"auth",
+								"token"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "(Users)",
+			"item": [
+				{
+					"name": "Users",
+					"item": [
+						{
+							"name": "Get Users",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{api_local_path}}/users",
+									"host": [
+										"{{api_local_path}}"
+									],
+									"path": [
+										"users"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "User",
+					"item": [
+						{
+							"name": "Add User",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "authorization",
+										"value": "Bearer {{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "Anders",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "asdadasdasdasd",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "anders@mediacollege.dk",
+											"type": "text"
+										},
+										{
+											"key": "file",
+											"type": "file",
+											"src": "/C:/MCDM_Arsenalet/One Day Viborg/materialer/34-anders-christensen.jpg"
+										},
+										{
+											"key": "role",
+											"value": "guest",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{api_local_path}}/user",
+									"host": [
+										"{{api_local_path}}"
+									],
+									"path": [
+										"user"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update User",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "authorization",
+										"value": "Bearer {{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "id",
+											"value": "66b4eb11d421d7353295681f",
+											"type": "text"
+										},
+										{
+											"key": "name",
+											"value": "Jens",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "anders@mediacollege.dk",
+											"type": "text"
+										},
+										{
+											"key": "file",
+											"type": "file",
+											"src": "/C:/MCDM_Arsenalet/One Day Viborg/materialer/34-amalie-rosbjerg.jpg"
+										},
+										{
+											"key": "password",
+											"value": "1234",
+											"type": "text"
+										},
+										{
+											"key": "role",
+											"value": "guest",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{api_local_path}}/user",
+									"host": [
+										"{{api_local_path}}"
+									],
+									"path": [
+										"user"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete User",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "authorization",
+										"value": "Bearer {{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{api_local_path}}/user?id=66b4eb11d421d7353295681f",
+									"host": [
+										"{{api_local_path}}"
+									],
+									"path": [
+										"user"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "66b4eb11d421d7353295681f"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get User ID",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{api_local_path}}/user?id=66b276a26bdd39792d78d6fc",
+									"host": [
+										"{{api_local_path}}"
+									],
+									"path": [
+										"user"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "66b276a26bdd39792d78d6fc"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	]
+}

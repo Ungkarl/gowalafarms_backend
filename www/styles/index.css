@@ -1,0 +1,57 @@
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+   
+}
+
+
+
+.endpoint {
+    font-family: Consolas;
+    margin: 20px 0;
+    border : 1px #333 dotted;
+    padding : 10px;
+    
+    header {
+    
+        display: flex;
+        align-items: baseline;
+        height : 28px;
+        gap : 10px;
+        font-size: 20px;
+
+        .snip {
+            color : maroon;
+            font-weight: 600;
+           
+            /* min-width: 60px; */
+
+            &.get {
+                color : green;
+            }
+
+            &.post {
+                color : orange;
+            }
+
+            &.put {
+                color : blue;
+            }
+
+            &.delete {
+                color : red;
+            }
+        }
+    }
+
+    .content {
+   
+    }
+
+    .formdata {
+        margin-top: 10px;
+    }
+}

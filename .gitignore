@@ -1,0 +1,6 @@
+# Environment variables
+# .env.local
+# .env
+
+# Folder / file
+node_modules

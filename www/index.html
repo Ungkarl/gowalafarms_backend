@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./scripts/index.js" defer></script>
+    <link rel="stylesheet" href="./styles/index.css">
+    <title>MediaCollege - Gowala Farms</title>
+</head>
+<body>
+    
+    <h1>Gowala Farms API Dokumentation</h1>
+    
+    <h2>
+        Employee / Employees
+    </h2>
+
+    <div class="endpoint">
+        <header>
+            <div class="snip get">
+                GET
+            </div>
+            <div class="path">
+                Employees
+            </div>
+        </header>
+        <div class="content">
+            http://localhost:3042/employees
+        </div>
+    </div> 
+
+    <div class="endpoint">
+        <header>
+            <div class="snip get">
+                GET
+            </div>
+            <div class="path">
+               Employee By ID
+            </div>
+        </header>
+        <div class="content">
+            http://localhost:3042/employee?id=[employeeId]
+        </div>
+    </div> 
+
+    <div class="endpoint">
+        <header>
+            <div class="snip post">
+                POST
+            </div>
+            <div class="path">
+                Employee
+            </div>
+        </header>
+        <div class="content">
+            http://localhost:3042/employee
+        </div>
+        <div class="formdata">
+            <b>FORM DATA</b>
+            <pre>
+name : "Name of employee"
+position : "Leader"
+description : "Beskrivelse"
+file: [file]</pre>
+        </div>
+    </div> 
+
+    <div class="endpoint">
+        <header>
+            <div class="snip put">
+                PUT
+            </div>
+            <div class="path">
+                Employee
+            </div>
+        </header>
+        <div class="content">
+            http://localhost:3042/employee
+        </div>
+        <div class="formdata">
+            <b>FORM DATA</b>
+            <pre>
+id : [empolyeeId]                
+name : "Name of employee"
+position : "Leader"
+description : "Beskrivelse"
+file: [file]</pre>
+        </div>
+    </div> 
+
+    <div class="endpoint">
+        <header>
+            <div class="snip delete">
+                DELETE
+            </div>
+            <div class="path">
+               Delete Employee ID
+            </div>
+        </header>
+        <div class="content">
+            http://localhost:3042/employee?id=[employeeId]
+        </div>
+    </div> 
+
+</body>
+</html>
