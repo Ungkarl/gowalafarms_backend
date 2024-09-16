@@ -25,12 +25,7 @@ Eller benyt kommandoen
 ```
 npm run seedAll
 ```
-
-## 3. Opret et lokalt branch.
-
-Opret og skift til ey lokalt branch du kalder feks. "dev-server".
-
-## 4. Åbn Mongo Compass.
+## 4. Åbn Mongo Compass. (Benytter lokal database via. Mongos Compass).
 
 Åbn Mongo Compass og se din "gowalafarms-db".
 
