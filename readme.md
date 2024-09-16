@@ -1,11 +1,4 @@
-```
-Media College Denmark
-```
-
-# Kom igang.
-
-Følg følgende trin.
-
+Guide til start af backend projekt
 ## 1. Opret en .env og .env.local fil i roden af projektet.
 
 Indsæt dette indhold:
